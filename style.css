@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Courier New", Courier, monospace;
+  }
+  
+  body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #202020;
+  }
+  
+  .container {
+    position: relative;
+    min-width: 300px;
+    min-height: 400px;
+    padding: 40px 30px 30px;
+    border-radius: 20px;
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+      10px 10px 70px rgba(0, 0, 0, 0.25),
+      inset -5px -5px 15px rgba(0, 0, 0, 0.25),
+      inset 5px 5px 15px rgba(0, 0, 0, 0.25);
+  }
+  
+  .calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 8px;
+  }
+  
+  .value {
+    grid-column: 1 / span 4;
+    height: 100px;
+    width: 100%;
+    padding: 10px;
+    font-size: 2em;
+    text-align: right;
+    background-color: #d6d7d2;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75);
+  }
+  
+  .num {
+    color: #fff;
+    position: relative;
+    display: grid;
+    width: 80px;
+    height: 80px;
+    place-items: center;
+    background: linear-gradient(180deg, #2f2f2f, #3f3f3f);
+    font-weight: 400;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 10px;
+    user-select: none;
+  }
+  
+  .num span {
+    position: relative;
+  }
+  
+  .num:active {
+    filter: brightness(1.5);
+  }
+  
+  .num::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    bottom: 14px;
+    right: 12px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #2d2d2d, #4d4d4d);
+    border-left: 1px solid #0004;
+    border-bottom: 1px solid #0004;
+    border-top: 1px solid #0009;
+    box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.1),
+      10px 5px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .num.plus {
+    grid-row: span 2;
+    height: 160px;
+  }
+  
+  .num.equal {
+    background: #2196f3;
+  }
+  
+  .num.equal::before {
+    background: linear-gradient(90deg, #1479c9, #ffffff5c);
+    border-left: 1px solid #fff4;
+    border-bottom: 1px solid #fff4;
+    border-top: 1px solid #fff4;
+  }
+  
